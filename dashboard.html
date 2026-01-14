@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="dashboard">
   <header>
     <div class="navbar">
       <h2 class="logo">Create blog</h2>
-       <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
       <div class="nav-links" id="navLinks">
         <button id="themeToggle">🌙</button>
         <a href="index.html">Feed</a>
@@ -21,17 +21,26 @@
     </div>
   </header>
 
- <main class="main-content">
-   <div class="container">
-    <div class="card">
-      <h2>Create New Blog</h2>
-      <input id="titleInp" placeholder="Blog Title">
-      <textarea id="contentInp" rows="6" placeholder="Blog Content"></textarea>
-      <button onclick="addBlog()">Publish</button>
-      <div id="blogList"></div>
-    </div>
+  <div class="go-to-feed">
+    <button class="secondary-btn" onclick="location.href='index.html'">
+      ← Go to Feed
+    </button>
   </div>
- </main>
+
+
+  <main class="main-content">
+    <div class="container">
+      <div  class="card">
+        <h2>Create New Blog</h2>
+        <input id="titleInp" placeholder="Blog Title">
+        <textarea id="contentInp" rows="6" placeholder="Blog Content"></textarea>
+        <button onclick="addBlog()">Publish</button>
+        <h3 style="justify-content: center; text-align: center; font-size: 30px; padding-bottom: 15px;">My All Blogs</h3>
+        <div id="blogList"></div>
+      </div>
+    </div>
+  </main>
+
 
   <footer class="footer">
     <div class="footer-container">
@@ -54,17 +63,16 @@
 
 
   <script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("show");
-  }
-  if (!auth.currentUser) {
-  document.querySelector('[onclick="logout()"]').style.display = "none";
-}
-</script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+    if (!auth.currentUser) {
+      document.querySelector('[onclick="logout()"]').style.display = "none";
+    }
+  </script>
   <script type="module" src="js/firebase.config.js"></script>
   <script type="module" src="js/blog.js"></script>
   <script type="module" src="js/auth.js"></script>
   <script type="module" src="js/theme.js"></script>
 </body>
-
 </html>

@@ -18,8 +18,8 @@ let editId = null;
 // Auth check
 auth.onAuthStateChanged((user) => {
   if(user){
-    getBlogs(); // Home page all blogs
-    if(document.body.id === "dashboard"){ // Dashboard page check
+    getBlogs(); 
+    if(document.body.id === "dashboard"){ 
       getDashboardBlogs();
     }
   }
